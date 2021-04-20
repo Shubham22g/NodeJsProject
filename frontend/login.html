@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Login:</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <style>
+        .login{
+           display: block;
+            background: beige;
+            padding: 10% 10% 10% 10%;
+            width: 50%;
+            margin: 0% 0% 0% 20%;
+        }
+        h5{
+            font-size: 250%;
+            font-family: cursive;
+            position: absolute;
+            margin: -6% 0% 0% 0%;
+            color: tomato;
+        }
+        h6{
+            position: absolute;
+            margin-top: 2%;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="login">
+            <h5>Login</h5>
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" placeholder="xyz@example.com" name="email" id="email" value="" /><br /><br />
+            <label for="email">Password:</label>
+            <input type="password" class="form-control" placeholder="***********" name="password" id="password" value="" 	/><br /><br />
+            <input type="button" class="btn btn-primary" value="Submit" id="submit" />
+            <h6>Don't have account! <a href="register.html">Create new</a></h6>
+        </div> 
+        <script>
+          $(document).ready(function(){
+               $("#submit").on("click", function(){                
+                var email = $("#email").val();
+                var password = $("#password").val();
+                var flag = false; 
+                if(email.length <=0 || email.trim ===''){
+                    swal({
+                        title: "Email is Mandatory!",
+                        icon: "warning",
+                        });
+                }
+                else if(password.length <=0 || password.trim ===''){
+                    swal({
+                        title: "Password is Mandatory!",
+                        icon: "warning",
+                        });
+                   }else{
+                    flag=true;                    
+                }               
+                if(flag){
+                    var data = {email:email, password:password}; 
+                    $.ajax({
+                        type: "POST",
+                         url: "http://127.0.0.1:5000/login",                   
+                        contentType: 'application/json',
+                        data: JSON.stringify(data),
+                        success: function(resultData){
+                            swal({ 
+                                title: 'Welcome '+ resultData.fullName,
+                                text: "Login Successfully",
+                                icon: "success",
+                                });
+                                localStorage.setItem("UserInfo", JSON.stringify(resultData));
+                                setTimeout(function(){
+                                    window.location.href = 'dashboard.html';
+                                }, 2500);
+                        },
+                        error: function(error){
+                            swal({
+                                title: error.responseText,
+                                icon: "error",
+                                });
+                        }
+                    });
+                }
+               }); 
+           });
+        </script>
+    </body>	 
+</html>
