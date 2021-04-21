@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Signup</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<style>
+		body{
+			background-color:darkviolet;
+		}
+		.register{
+			position: absolute;
+			width: 50%;
+			padding: 10% 10% 10% 10%;
+			margin: 0% 0% 0% 20%;
+		}
+		 h5{
+            font-size: 250%;
+			font-family: none;
+			position: absolute;
+			margin: -15% 0% 0% 7%;
+			color: currentColor;
+        }
+		h6{
+            position: absolute;
+            margin-top: 2%;
+        }
+		a{
+			color : white;
+		}
+		</style>
+	</head>
+		<body>
+			<div class="register"> 
+			<h5>Update user &#127875;</h5>
+				 <label for="fname">Name:</label>
+					<input type="text" class="form-control" placeholder="Enter Name" name="fullName" id="fullName" /><br />
+					<label for="email">Email:</label>
+					<input type="email" class="form-control" placeholder="Enter email" name="email" id="email" value="" disabled title="You can't edit Email Address"/><br />
+					<label for="phone">Phone Number:</label>
+					<input type="text" class="form-control" placeholder="Enter number" name="number" id="number" value="" /><br />
+					<label for="age">Age:</label>
+					<input type="number" class="form-control" placeholder="Enter age" name="age" id="age" value="" /><br />
+					<input type="button" class="btn btn-primary" value="Update" id="submit" /> 
+					<a href="/frontend/dashboard.html" class="btn btn-warning">Cancel</a>
+			</div>
+
+			<script>
+            $(document).ready(function(){ 
+				setdata();                  
+					$("#submit").on("click", function(){   
+						var fullName = $("#fullName").val();
+						var email = $("#email").val();
+						var number = $("#number").val();
+						var age = $("#age").val();
+						var flag = false;
+						if(fullName.length<=0 || email.length<=0 || number.length<=0||age<=0){
+							swal({
+								title: "All Fields are Mandatory!",
+								icon: "warning",
+							});
+						}else if(number.length<7 || number.length>12){
+							swal({
+								title: "Please enter valid Number !",
+								icon: "warning",
+							});
+						}else if(age<18){
+							swal({
+								title: "You must be 18+",
+								icon: "warning",
+							});
+						}else{
+							flag = true;
+						}
+						if(flag){
+							var data = {fullName:fullName, email:email, number:number, age:age}; 
+							$.ajax({
+								type: "PUT",
+								url: "http://127.0.0.1:5000/update",                   
+								contentType: 'application/json',
+								data: JSON.stringify(data),
+								success: function(resultData){
+									swal({ 
+										title: 'Updated Successfully',
+										icon: "success",
+										});
+									localStorage.setItem("UserInfo", JSON.stringify(resultData));
+                                	setTimeout(function(){window.location.href = 'dashboard.html';},2000);
+								},
+								error: function(error){
+									swal({
+										title: error.responseText,
+										icon: "error",
+										});
+								}
+							});
+						}
+
+					}); 
+				});
+            function setdata(){
+                    var userData = localStorage.getItem('UserInfo');
+					userData = JSON.parse(userData);
+                    $("#fullName").val(userData.fullName);
+                    $("#email").val(userData.email); 
+                    $("#number").val(userData.number);
+                    $("#age").val(userData.age);
+               }
+			</script>
+		</body> 
+</html>
