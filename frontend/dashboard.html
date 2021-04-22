@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Welcome:<sapn id="WUser"></sapn></title>
+		<meta charset="UTF-8" />
+		  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .cart_div{
+        width: 10%;
+        font-weight: bolder;
+        font-size: 100%;
+        margin: 1% 1% 1% 89%;
+    }
+    .cart_div a{
+        color:white;
+    }
+    .main-div {
+        margin-left: 5%;
+    }
+    div.polaroid {
+        width: 40%;
+        margin: 0% 0% 5% 0%;
+        box-shadow: 0 10px 20px 0 rgb(0 0 0 / 35%), 0 10px 20px 0 rgb(0 0 0 / 20%);
+    }
+    label.description {
+        width: 200%;
+        max-width: 200%;
+    }
+.btns {
+    margin: 40% 0% 0% 5%;
+    position: relative;
+}
+span {
+    color: #ef0000;
+}
+h4.cart-cart {
+   color: white;
+    position: relative;
+    margin: -15% 0% 0% 43%;
+}
+    div.container {
+        margin-top: -25%;
+        padding: 1px;
+        position: absolute;
+        margin-left: 50%;
+        width: 20%;
+    }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="#">e-commerce</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="profile">Page 1
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        <li><a href="#" id="profile-edit">Edit</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="login.html" class="logout">Logout</a></li> 
+                </ul>
+                <div class="cart_div"><a href="#">Cart <i style="font-size:20px" class="fa fa-shopping-cart"></i></a><h4 class="cart-cart"></h4></div>
+            </div>
+        </nav>
+        
+        <div class="main-div">
+             <table class="table">
+                <div class="polaroid">
+                    <img src="https://www.gizbot.com/imgh/300x220/2020/03//redmi-note-9-pro-max_158409369750.jpg" alt="Norway" style="width:100%">
+                    <div class="container">
+                        <h2>Redmi Note 9 Pro</h2>
+                        <label class="description">64MP rear camera with ultra-wide, super macro, portrait, night mode, 960fps slowmotion, AI scene recognition, pro color, HDR, pro mode | 32MP front camera</label>
+                        <div class="price">
+                             <strike><h4>M.R.P : <span>$700</span></h4></strike>
+                            <h4>Deal price : <span>$599</span></h4>                        
+                        </div>
+                        <div class="btns">
+                            <button class="btn btn-info cart">Add to cart</button>
+                            <button class="btn btn-warning" title="Not supported yet !">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://cdn.vox-cdn.com/thumbor/l6St-Cm9eVcD9YI5EsHxDMK1tGc=/0x0:2040x1360/1200x800/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/67086163/jporter_200720_4101_0007.0.0.jpg" alt="Norway" style="width:100%">
+                    <div class="container">
+                        <h2>OnePlus Nord 5G</h2>
+                        <label class="description">48MP+8MP+5MP+2MP quad rear camera with 1080P Video at 30/60 fps, 4k 30fps | 32MP+8MP front dual camera with 4K video capture at 30/60 fps and 1080 video capture at 30/60 fps</label>
+                        <div class="price">
+                             <strike><h4>M.R.P : <span>$1100</span></h4></strike>
+                            <h4>Deal price : <span>$999</span></h4>                        
+                        </div>
+                        <div class="btns">
+                            <button class="btn btn-info cart">Add to cart</button>
+                            <button class="btn btn-warning" title="Not supported yet !">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202103/oneplus-9-ad-official_0_1200x768.jpeg?7_IjF4a7fODFALR7FVYcJWewgL_.sPQW&size=770:433" alt="Norway" style="width:100%">
+                    <div class="container">
+                        <h2>One plus 9</h2>
+                        <label class="description">The OnePlus 9 Pro showcases the stunning “Designed by OnePlus” vision. It's an irresistible harmony of creativity, exclusive materials, and premium unibody</label>
+                        <div class="price">
+                             <strike><h4>M.R.P : <span>$1200</span></h4></strike>
+                            <h4>Deal price : <span>$1150</span></h4>                        
+                        </div>
+                        <div class="btns">
+                            <button class="btn btn-info cart">Add to cart</button>
+                            <button class="btn btn-warning" title="Not supported yet !">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://www.cnet.com/a/img/2qzpp6xqRv8LeB_LsOIPBlHBCcI=/420x236/2020/04/12/9b6d6f3a-d6eb-4dbc-beb5-0c567e50096f/oneplus-8-pro-0605.jpg" alt="Norway" style="width:100%">
+                    <div class="container">
+                        <h2>One plus 8</h2>
+                        <label class="description">Rear Quad Camera with 48 MP Sony IMX586 Sensor, 16 MP Ultra Wide Angle, 5 MP macro lens and 2 MP monochrome lens,Front Camera with 16 MP Sony IMX471 Sensor</label>
+                        <div class="price">
+                             <strike><h4>M.R.P : <span>$999</span></h4></strike>
+                            <h4>Deal price : <span>$950</span></h4>                        
+                        </div>
+                        <div class="btns">
+                            <button class="btn btn-info cart">Add to cart</button>
+                            <button class="btn btn-warning" title="Not supported yet !">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://i.guim.co.uk/img/media/12e9bdac114716e3098cde3720109e7e1c39533e/514_543_4376_2626/master/4376.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=1a35bbeb0d1bd91bcdfed3d19782e6fe" alt="Norway" style="width:100%">
+                    <div class="container">
+                        <h2>Apple iPhone 12</h2>
+                        <label class="description">6.1-inch (15.5 cm diagonal) Super Retina XDR display Ceramic Shield, tougher than any smartphone glass</label>
+                        <div class="price">
+                             <strike><h4>M.R.P : <span>$2000</span></h4></strike>
+                            <h4>Deal price : <span>$1800</span></h4>                        
+                        </div>
+                        <div class="btns">
+                            <button class="btn btn-info cart">Add to cart</button>
+                            <button class="btn btn-warning" title="Not supported yet !">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://www.apple.com/newsroom/images/product/iphone/standard/apple_iphone-12_color-green_10132020_big_carousel.jpg.large.jpg" alt="Norway" style="width:100%">
+                    <div class="container">
+                        <h2>iPhone 11 Pro</h2>
+                        <label class="description">5.4-inch (13.7 cm diagonal) Super Retina XDR display Ceramic Shield, tougher than any smartphone glass</label>
+                        <div class="price">
+                             <strike><h4>M.R.P : <span>$1400</span></h4></strike>
+                            <h4>Deal price : <span>$1300</span></h4>                        
+                        </div>
+                        <div class="btns">
+                            <button class="btn btn-info cart">Add to cart</button>
+                            <button class="btn btn-warning" title="Not supported yet !">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://images.firstpost.com/wp-content/uploads/2019/10/iPhone-11-Pro-Max-1024x768.jpg" alt="Norway" style="width:100%">
+                    <div class="container">
+                        <h2>Apple iPhone 11</h2>
+                        <label class="description">6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display Water and dust resistant (2 meters for up to 30 minutes, IP68)</label>
+                        <div class="price">
+                             <strike><h4>M.R.P : <span>$1600</span></h4></strike>
+                            <h4>Deal price : <span>$1500</span></h4>                        
+                        </div>
+                        <div class="btns">
+                            <button class="btn btn-info cart">Add to cart</button>
+                            <button class="btn btn-warning" title="Not supported yet !">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://static.digit.in/fckeditor/Prasid%20images/Apple%20iPhone%206/iPhone%206%20Back.jpg" alt="Norway" style="width:100%">
+                    <div class="container">
+                        <h2>I phone 6</h2>
+                        <label class="description">4.7-inch Retina HD display with True Tone IP67 water and dust resistant (maximum depth of 1 meter up to 30 minutes)</label>
+                        <div class="price">
+                             <strike><h4>M.R.P : <span>$400</span></h4></strike>
+                            <h4>Deal price : <span>$310</span></h4>                        
+                        </div>
+                        <div class="btns">
+                            <button class="btn btn-info cart">Add to cart</button>
+                            <button class="btn btn-warning" title="Not supported yet !">Buy now</button>
+                        </div>
+                    </div>
+                </div>
+             </table>
+        </div>
+        <script type="text/javascript">
+         $(document).ready(function(){
+              var data = localStorage.getItem("UserInfo");
+              data = JSON.parse(data);
+              $('#profile').text('Welcome '+data.fullName);
+              $('#profile').append('<span class="caret"></span>');
+              document.title = 'Welcome '+data.fullName;
+              $('#profile-edit').on('click', function(){
+                  window.location.href = 'editUser.html';
+              })
+           });
+           var cartCount = 0;
+           var cart = localStorage.getItem('cartCount');
+           $('.cart').on('click', function(){     
+               $(this).attr('disabled');           
+                if(cart>0){
+                   cartCount = cart++; 
+                }else{
+                    cartCount++;
+                }
+                $('.cart-cart').text('('+cartCount+')');
+                localStorage.setItem('cartCount', cartCount);
+           });           
+           if(cart>0){
+               $('.cart-cart').text('('+cart+')');
+           }
+        </script>
+    </body>	 
+</html>
